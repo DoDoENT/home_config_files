@@ -79,6 +79,7 @@ set nocp
 set wrap
 set linebreak
 set nolist " list disables linebreak
+set showcmd
 filetype plugin on
 colors koehler
 
@@ -130,16 +131,12 @@ autocmd VimEnter * wincmd p
 source ~/.vim/plugin/a.bin
 map <C-Tab> :A<CR>
 map <C-B> :wa<CR>:make<CR>
-map <A-Left> :bp<CR>
-map <A-Right> :bn<CR>
+map <A-Left> :bp!<CR>
+map <A-Right> :bn!<CR>
 
 map > <C-W>>
 map < <C-W><
 map + <C-W>+
 map - <C-W>-
-"map <C-Left> <C-W><Left>
-"map <C-Right> <C-W><Right>
-"map <C-Up> <C-W><Up>
-"map <C-Down> <C-W><Down>
 
 map <C-W>c :Bclose<CR>
