@@ -80,11 +80,13 @@ set wrap
 set linebreak
 set nolist " list disables linebreak
 set showcmd
+set winaltkeys=no " disable menu shortcuts
 filetype plugin on
 colors koehler
 
 " configure tags - add additional tags here or comment out not-used ones
 set tags+=/usr/share/vim/omnitags/CPP/tags
+"au BufWritePost *.c,*.cpp,*.h,*.hpp silent! !eval 'ctags -R -o newtags; mv newtags tags' &
 
 " OmniCppComplete
 
@@ -115,28 +117,12 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-imap <C-Space> <C-X><C-O>
-map <C-V> "+gP
-map <C-C> "+y
-map <C-X> "+y d<CR>
-" build tags of your own project with Ctrl+F12
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+aiKlmnSzt --extra=+q .<CR>
-"au BufWritePost *.c,*.cpp,*.h,*.hpp silent! !eval 'ctags -R -o newtags; mv newtags tags' &
-map <C-s> :wa<CR>
 
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd p
 
 source ~/.vim/plugin/a.bin
-map <C-Tab> :A<CR>
-map <C-B> :wa<CR>:make<CR>
-map <A-Left> :bp!<CR>
-map <A-Right> :bn!<CR>
-
-map > <C-W>>
-map < <C-W><
-map + <C-W>+
-map - <C-W>-
-
-map <C-W>c :Bclose<CR>
+source ~/.vim/macros/my_mappings.vim
+source ~/.vim/macros/clewn_mappings.vim
+call MyMappings()
