@@ -7,6 +7,7 @@ export Locutus="192.168.1.34"
 export Stormtrooper="stormtrooper"
 export STFilmovi="dodo@$Stormtrooper:~/Downloads/filmovi"
 export STHome="dodo@$Stormtrooper:~/"
+export PATH=$PATH:~/bin
 
 alias photopay='cd /home/dodo/private/Documents/Moje_Gluposti/PhotoPay/PhotoPay/core-photopay/'
 alias buildCTags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -o ~/.vim/tags/cpp.tags /usr/include/c++'
