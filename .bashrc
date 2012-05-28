@@ -30,7 +30,7 @@ alias extract='tar -xvf'
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 complete -cf sudo
 source ~/.git-completition.sh
-if [ -f "/usr/lib/stderred.so" ]; then
-    export LD_PRELOAD="/usr/lib/stderred.so"
-fi
+#if [ -f "/usr/lib/stderred.so" ]; then
+    #export LD_PRELOAD="/usr/lib/stderred.so"
+#fi
 

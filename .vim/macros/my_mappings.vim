@@ -17,7 +17,7 @@ imap <C-V> <Esc>"+gPa
 map <C-C> "+y
 map <C-X> "+d 
 " build tags of your own project with Ctrl+F12
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+aiKlmnSzt --extra=+q .<CR>
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+aiKlmnSzt --extra=+q .
 map <C-s> :wa<CR>
 imap <C-s> <Esc>:wa<CR>
 map <C-Tab> :A<CR>
