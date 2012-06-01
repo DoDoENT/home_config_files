@@ -7,7 +7,7 @@ export Locutus="192.168.1.34"
 export Stormtrooper="stormtrooper"
 export STFilmovi="dodo@$Stormtrooper:~/Downloads/filmovi"
 export STHome="dodo@$Stormtrooper:~/"
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/android-sdks/platform-tools:~/android-sdks/tools:~/android-sdks/android-ndk-r7b/
 
 alias photopay='cd /home/dodo/private/Documents/Moje_Gluposti/PhotoPay/PhotoPay/core-photopay/'
 alias buildCTags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -o ~/.vim/tags/cpp.tags /usr/include/c++'
