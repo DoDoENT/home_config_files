@@ -118,11 +118,11 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
+"autocmd VimEnter * wincmd p
 
-source ~/.vim/plugin/a.bin
+"source ~/.vim/plugin/a.bin
 source ~/.vim/macros/my_mappings.vim
 source ~/.vim/macros/clewn_mappings.vim
 call MyMappings()

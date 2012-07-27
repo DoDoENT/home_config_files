@@ -10,6 +10,7 @@ export STHome="dodo@$Stormtrooper:~/"
 export PATH=$PATH:~/bin:~/android-sdks/platform-tools:~/android-sdks/tools:~/android-sdks/android-ndk-r8/:/home/dodo/android-sdks/android-ndk-r8/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
 
 alias photopay='cd /home/dodo/private/Documents/Moje_Gluposti/PhotoPay/PhotoPay/core-photopay/'
+alias profile='/home/dodo/private/Documents/Moje_Gluposti/profiling/gperftools/profile.sh'
 alias buildCTags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -o ~/.vim/tags/cpp.tags /usr/include/c++'
 alias vi='vim'
 alias kaj='man'
