@@ -2,7 +2,6 @@
 " Maintainer:	<xdegaye at users dot sourceforge dot net>
 " Last Change:	21 Oct 2006
 
-source ~/.vim/macros/my_mappings.vim
 nmap <F7> :call <SID>Toggle()<CR>
 
 " Map keys with Vim version 7.0 or above
@@ -11,14 +10,14 @@ function! s:Map_vim_70()
     nmap <silent> B :nbkey S-B<CR>
     nmap <silent> L :nbkey S-L<CR>
     nmap <silent> A :nbkey S-A<CR>
+    nmap <silent> S :nbkey S-S<CR>
     nmap <silent> I :nbkey S-I<CR>
-    nmap <silent> <F6> :nbkey C-N<CR>
-    nmap <silent> <F5> :nbkey S-S<CR>
+    nmap <silent> <C-N> :nbkey C-N<CR>
     nmap <silent> X :nbkey S-X<CR>
     nmap <silent> F :nbkey S-F<CR>
     nmap <silent> R :nbkey S-R<CR>
     nmap <silent> Q :nbkey S-Q<CR>
-    nmap <silent> <F8> :nbkey S-C<CR>
+    nmap <silent> C :nbkey S-C<CR>
     nmap <silent> W :nbkey S-W<CR>
     nmap <silent> <C-U> :nbkey C-U<CR>
     nmap <silent> <C-D> :nbkey C-D<CR>
@@ -81,9 +80,7 @@ endfunction
 function! s:Toggle()
     if s:clewn_k
 	let s:clewn_k = 0
-    echo "Entering debug mode..."
-    " enter debug mode
-    nbstart
+
 	" Map the keys
 	if v:version < 700
 	    call s:Map_vim_old()
@@ -92,20 +89,48 @@ function! s:Toggle()
 	endif
 
 	echohl ErrorMsg
-	echo "clewn keys mapped and entered debug mode"
+	echo "clewn keys mapped"
 	echohl None
 
     " Restore vim defaults
     else
-    echo "Returning to normal mode..."
 	let s:clewn_k = 1
-    nbclose
-    call MyMappings()
+
+	nunmap <C-Z>
+	nunmap B
+	nunmap L
+	nunmap A
+	nunmap S
+	nunmap I
+	nunmap <C-N>
+	nunmap X
+	nunmap F
+	nunmap R
+	nunmap Q
+	nunmap C
+	nunmap W
+	nunmap <C-U>
+	nunmap <C-D>
+
+	nunmap <C-B>
+	nunmap <C-E>
+	nunmap <C-K>
+	nunmap <C-H>
+	nunmap <C-P>
+	nunmap <C-X>
+	nunmap <C-J>
 
 	echohl ErrorMsg
-	echo "clewn keys reset to default and exited debug mode"
+	echo "clewn keys reset to default"
 	echohl None
     endif
 endfunction
 
-let s:clewn_k=0
+" Do map clewn keys
+let s:clewn_k = 1
+if v:version < 700
+    call s:Toggle()
+else
+    let s:clewn_k = 0
+endif
+

@@ -7,11 +7,7 @@ export Locutus="192.168.1.34"
 export Stormtrooper="stormtrooper"
 export STFilmovi="dodo@$Stormtrooper:~/Downloads/filmovi"
 export STHome="dodo@$Stormtrooper:~/"
-export PATH=$PATH:~/bin:~/android-sdks/platform-tools:~/android-sdks/tools:~/android-sdks/android-ndk-r8/:/home/dodo/android-sdks/android-ndk-r8/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin
 
-alias photopay='cd /home/dodo/private/Documents/Moje_Gluposti/PhotoPay/PhotoPay/core-photopay/'
-alias profile='/home/dodo/private/Documents/Moje_Gluposti/profiling/gperftools/profile.sh'
-alias buildCTags='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -o ~/.vim/tags/cpp.tags /usr/include/c++'
 alias vi='vim'
 alias kaj='man'
 alias sshCopy='rsync -av --progress --rsh=ssh'
@@ -28,10 +24,5 @@ alias lal='ls --color=always -lah'
 alias sudo='sudo '
 alias compress='tar -cpav'
 alias extract='tar -xvf'
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+PS1='[\u@\h \W]\$ '
 complete -cf sudo
-source ~/.git-completition.sh
-if [ -f "/usr/lib/stderred.so" ]; then
-    export LD_PRELOAD="/usr/lib/stderred.so"
-fi
-

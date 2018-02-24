@@ -79,50 +79,10 @@ set nocp
 set wrap
 set linebreak
 set nolist " list disables linebreak
-set showcmd
-set winaltkeys=no " disable menu shortcuts
 filetype plugin on
-colors koehler
 
 " configure tags - add additional tags here or comment out not-used ones
-set tags+=/usr/share/vim/omnitags/CPP/tags
-"au BufWritePost *.c,*.cpp,*.h,*.hpp silent! !eval 'ctags -R -o newtags; mv newtags tags' &
-
-" OmniCppComplete
-
-" 0 = namespaces disabled
-" 1 = search namespaces in the current buffer
-" 2 = search namespaces in the current buffer and in included files
-let OmniCpp_NamespaceSearch = 2
-
-" use global scope search
-let OmniCpp_GlobalScopeSearch = 1
-
-" 0 = auto
-" 1 = always show all members
-let OmniCpp_DisplayMode = 1
-
-" This option allows to show/hide the access information ('+', '#', '-') in the popup menu.
-" 0 = hide access
-" 1 = show access
-let OmniCpp_ShowAccess = 1
-
-" 0 = don't show scope in abbreviation
-" 1 = show scope in abbreviation and remove the last column
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
-
-"autocmd VimEnter * NERDTree
-"autocmd BufEnter * NERDTreeMirror
-"autocmd VimEnter * wincmd p
-
-"source ~/.vim/plugin/a.bin
-source ~/.vim/macros/my_mappings.vim
-source ~/.vim/macros/clewn_mappings.vim
-call MyMappings()
+set tags+=~/.vim/tags/cpp
+" build tags of your own project with Ctrl+F12
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <C-s> :wa<CR>
